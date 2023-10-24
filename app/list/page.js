@@ -1,44 +1,27 @@
-'use client'
-import {useEffect, useState} from "react";
+import {connectionMongoDb} from "@/app/util/client";
 
-const List = ()=>{
+const List = async ()=>{
     const productListTitle = "Products";
-    const [items, setItems]= useState([]);
+    const client = await connectionMongoDb();
+    const db = client.db("forum");
+    const data = await db.collection('post').find().toArray();//특정 컬렉션의 데이터를 array로 받기
+    // console.log(data);
 
-    useEffect(() => {
-        setItems([
-            {
-                seq: 1,
-                type:"food",
-                name:"상품1",
-                price:40,
-                amount: 2,
-            },
-            {
-                seq:2,
-                type:"tool",
-                name:"상품2",
-                price:30,
-                amount: 4,
-            }]);
-    }, []);
     return (
-        <div className="list_page">
+        <div className="list-bg">
             <h2 className="product_title">{productListTitle}</h2>
-            <ul className="product_list">
-                {
-                    items?.length > 0
-                        ? items.map((item,idx)=>{
-                            return(
-                                <li key={`item_${item.seq}`} className={`item_${item.type}`}>
-                                    <h4 className="item_name">{`${idx}. ${item.name} $${item.price}(${item.amount})`}</h4>
-                                </li>
-                            );
-                        })
-                        :<></>
-
-                }
-            </ul>
+            {
+                data?.length > 0
+                    ? data.map(item=>{
+                        return (
+                            <div key={item._id} className="list-item">
+                                <h4>{item.title}</h4>
+                                <p>{item.content}</p>
+                            </div>
+                        )
+                    })
+                    : <div><h4>게시물이 없습니다.</h4></div>
+            }
         </div>
     )
 }
