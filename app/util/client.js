@@ -1,5 +1,6 @@
 import {MongoClient, ServerApiVersion} from "mongodb";
 
+global._mongo = undefined;
 
 async function connectionMongoDb(){
     let connectDB;
