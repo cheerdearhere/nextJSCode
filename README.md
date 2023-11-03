@@ -1,5 +1,10 @@
-nextJS 프로젝트의 기본 readMe 파일: 
 
+# next.js에서 서버기능 만들기(선택)
+1. app폴더 아래에 api폴더
+2. project 아레에 pages/api
+
+
+nextJS 프로젝트의 기본 readMe 파일: 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
