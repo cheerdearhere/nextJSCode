@@ -1,12 +1,18 @@
-import {connectionMongoDb} from "@/app/util/client";
+'use client'
 import Link from "next/link";
+import {apiCall, pageLink} from "@/app/components/commons";
+import {HTTP_METHODS} from "next/dist/server/web/http";
+import {useEffect, useState} from "react";
 
 const List = async ()=>{
     const productListTitle = "Products";
-    const client = await connectionMongoDb();
-    const db = client.db("forum");
-    const data = await db.collection('post').find().toArray();//특정 컬렉션의 데이터를 array로 받기
-    // console.log(data);
+    const [data,setData]=useState([]);
+    useEffect(async () => {
+        const data = await apiCall(HTTP_METHODS[0],`${pageLink.api}list`);
+        console.log(data);
+        // setData(()=>return data);
+    }, []);
+
 
     return (
         <div className="list-bg">
