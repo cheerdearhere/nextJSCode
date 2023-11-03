@@ -1,4 +1,5 @@
 import {connectionMongoDb} from "@/app/util/client";
+import Link from "next/link";
 
 const List = async ()=>{
     const productListTitle = "Products";
@@ -15,12 +16,16 @@ const List = async ()=>{
                     ? data.map(item=>{
                         return (
                             <div key={item._id} className="list-item">
-                                <h4>{item.title}</h4>
+                                <Link href={`/detail/${item._id}`} prefetch={false}>
+                                    <h4>{item.title}</h4>
+                                </Link>
                                 <p>{item.content}</p>
                             </div>
                         )
                     })
-                    : <div><h4>게시물이 없습니다.</h4></div>
+                    : ( <div>
+                            <h4>게시물이 없습니다.</h4>
+                        </div>)
             }
         </div>
     )

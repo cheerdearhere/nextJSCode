@@ -1,3 +1,8 @@
+a{
+    text-decoration: none;
+    color: #000;
+}
+
 .item_food{
     margin: 20px auto;
     width: 200px;
