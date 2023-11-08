@@ -1,19 +1,10 @@
-'use client'
 import Link from "next/link";
-import {apiCall, pageLink} from "@/app/components/commons";
-import {HTTP_METHODS} from "next/dist/server/web/http";
-import {useEffect, useState} from "react";
+import {apiLinks} from "@/app/components/serverSide/linkList";
+
 
 const List = async ()=>{
     const productListTitle = "Products";
-    const [data,setData]=useState([]);
-    useEffect(async () => {
-        const data = await apiCall(HTTP_METHODS[0],`${pageLink.api}list`);
-        console.log(data);
-        // setData(()=>return data);
-    }, []);
-
-
+    const data= await fetch(apiLinks.getList,{}).then(res=>res.json()).then(r=>r);
     return (
         <div className="list-bg">
             <h2 className="product_title">{productListTitle}</h2>

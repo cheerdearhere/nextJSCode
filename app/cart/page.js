@@ -1,11 +1,12 @@
 import Link from "next/link";
-import {pageLink} from "@/app/components/commons";
+import {pageLinks} from "@/app/components/serverSide/linkList";
+
 
 export default function Cart(){
     return (
         <div>
             <h1>장바구니</h1>
-            <Link href={pageLink.payment}>결제하기</Link>
+            <Link href={pageLinks.payment}>결제하기</Link>
         </div>
     );
 }

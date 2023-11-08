@@ -1,7 +1,8 @@
 'use client'
 import {useState} from "react";
-import {apiCall, pageLink} from "@/app/components/commons";
+import {apiCall} from "@/app/components/apiCall";
 import {HTTP_METHODS} from "next/dist/server/web/http";
+import {pageLinks} from "@/app/components/serverSide/linkList";
 
 export default function Write(){
     const [textData,setTextData] = useState({
@@ -36,11 +37,12 @@ export default function Write(){
             new Blob([JSON.stringify(textData)],{type: "application/json" })
         );
         const opt = {
+            type: "application/json",
             headers: {
                 "Content-Type": "multipart/form-data",
             },
         }
-        const data = await apiCall(HTTP_METHODS[3],`${pageLink.api}test`,opt,formData);
+        const data = await apiCall(HTTP_METHODS[3],`${pageLinks.api}test`,opt,formData);
         alert(data);
     }
     return (

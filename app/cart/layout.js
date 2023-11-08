@@ -1,5 +1,3 @@
-import Link from "next/link";
-import {pageLink} from "@/app/components/commons";
 
 export default function CartLayout({ children }) {
     return (

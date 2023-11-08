@@ -4,6 +4,10 @@ const HttpResponseStatus = {
         CODE: 200,
         MESSAGE: "success",
     },
+    NO_DATA : {
+        CODE: 201,
+        MESSAGE: "no data"
+    },
     // 300~
     // 400~
     CLIENT_ERROR : {

@@ -1,4 +1,4 @@
-import {connectionMongoDb} from "@/app/util/client";
+import {connectionMongoDb} from "@/app/util/mongoClient";
 import {ObjectId} from "mongodb";
 
 export default async function Detail(props){

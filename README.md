@@ -1,7 +1,14 @@
 
-# next.js에서 서버기능 만들기(선택)
+# I. next.js에서 서버기능 만들기(선택)
 1. app폴더 아래에 api폴더
 2. project 아레에 pages/api
+
+# II. 기억하기
+## A. api를 호출할때는 domain을 포함한 전체 path를 호출
+## B. page내 이동(navigate, Route)은 상대 경로도 가능
+## C. api는 꼭...
+    request와 response를 기억하기
+
 
 
 nextJS 프로젝트의 기본 readMe 파일: 
