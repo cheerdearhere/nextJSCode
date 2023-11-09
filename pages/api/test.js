@@ -8,5 +8,5 @@ export default function handler(request,response){
     // }
 
     let returnMsg = `${request.method} test : ${HttpResponseStatus.SUCCESS.MESSAGE} ${new Date().toLocaleDateString()}`;
-    return response.status(HttpResponseStatus.SUCCESS.CODE).json(returnMsg);
+    return response.status(HttpResponseStatus.CREATED.CODE).json(returnMsg);
 }

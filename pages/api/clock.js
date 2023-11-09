@@ -14,5 +14,5 @@ export default function clockHandler(request,response){
     const dateString = current.toLocaleDateString(location,options);
     const timeString = `${h}:${m}:${s}`;
     const dateTimeString =dateString+' '+timeString;
-    return response.status(HttpResponseStatus.SUCCESS.CODE).json(dateTimeString);
+    return response.status(HttpResponseStatus.OK.CODE).json(dateTimeString);
 }
