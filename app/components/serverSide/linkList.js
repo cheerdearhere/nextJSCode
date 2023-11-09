@@ -3,6 +3,7 @@ const apiLinks = {
     doPostTest         : `${domain}/api/test`,
     getList            : `${domain}/api/list`,
     getDatTime         : `${domain}/api/clock`,
+    addPost          : `${domain}/api/post/new`,
 }
 const pageLinks = {
     home            : "/",
