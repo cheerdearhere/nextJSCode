@@ -10,8 +10,10 @@ const pageLinks = {
     list            : "/list",
     cart            : "/cart",
     payment         : "/cart/payment",
+    write           : "/write",
 }
 export {
+    domain,
     apiLinks,
     pageLinks,
 }

@@ -2,55 +2,71 @@
 
 import {useRouter} from "next/navigation";
 
-const HomeBtn = ()=>{
+const HomeBtn = (btnContent)=>{
     let router = useRouter();
     return (
         <button
             onClick={()=>{router.push('/')}}
         >
-            navigation 사용
+            {
+                // navigation 사용
+                btnContent
+            }
         </button>
     )
 }
 
-const BackBtn = ()=>{
+const BackBtn = (btnContent)=>{
     let router = useRouter();
     return (
         <button
             onClick={()=>{router.back()}}
         >
-            navigation 사용 Back
+            {
+                // navigation 사용 Back
+                btnContent
+            }
         </button>
     )
 }
 
-const ForwardBtn = ()=>{
+const ForwardBtn = (btnContent)=>{
     let router = useRouter();
     return (
         <button
             onClick={()=>{router.forward()}}
         >
-            navigation 사용 Forward
+            {
+                // navigation 사용 Forward
+                btnContent
+            }
         </button>
     )
 }
 
-const RefreshBtn = ()=>{
+const RefreshBtn = (btnContent)=>{
     let router = useRouter();
     return (
         <button
             onClick={()=>{router.refresh()}}
         >
-            navigation 사용 Back
+            {
+                btnContent
+                /*navigation 사용 Back*/
+            }
         </button>
     )
 }
 
-const PrefetchBtn = (url) =>{
+const CustomURLBtn = (props) =>{
     let router = useRouter();
+    const {url, btnContent} = props;
+    const goToUrl = ()=>{
+        router.push(url);
+    }
     return (
-        <button onClick={()=>router.prefetch(url)}>
-            navigation prefetch
+        <button onClick={goToUrl}>
+            {btnContent}
         </button>
     );
 }
@@ -62,5 +78,5 @@ export {
     BackBtn,
     RefreshBtn,
     ForwardBtn,
-    PrefetchBtn,
+    CustomURLBtn,
 };
