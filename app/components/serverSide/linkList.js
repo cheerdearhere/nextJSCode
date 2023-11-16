@@ -11,6 +11,8 @@ const pageLinks = {
     cart            : "/cart",
     payment         : "/cart/payment",
     write           : "/write",
+    //need pathVariable
+    detail          : `/detail/`,//+id
 }
 export {
     domain,

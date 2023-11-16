@@ -16,7 +16,7 @@ const List = async ()=>{
                     ? data.map(item=>{
                         return (
                             <div key={item._id} className="list-item">
-                                <Link href={`/detail/${item._id}`} prefetch={false}>
+                                <Link href={pageLinks.detail+item._id} prefetch={false}>
                                     <h4>{item.title}</h4>
                                 </Link>
                                 <p>{item.content}</p>
