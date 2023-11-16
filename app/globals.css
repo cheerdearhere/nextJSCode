@@ -18,6 +18,7 @@ button {
     background: lightgray;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 /* QuerySelector : class */
