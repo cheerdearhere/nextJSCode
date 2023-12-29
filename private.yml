@@ -1,3 +1,4 @@
+#TODO 직접 작성
 mongo:
   id: "mongoDB ID"
-  password: "monogoDB PW"
+  password: "mongoDB PW"

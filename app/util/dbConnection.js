@@ -5,6 +5,8 @@ const databaseType={
     MS_SQL      : "mssql",
     MY_SQL      : "mysql",
     MARIA_DB    : "mariaDB",
+    // ORACLE_XE   : "oracleXe",
+    // ORACLE_CL   : "oracleCloud",
 }
 const connectionConfig = (dbType)=>{
     console.log(`databaseType: ${dbType}`);
